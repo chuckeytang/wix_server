@@ -62,7 +62,7 @@ def handle_wix_webhook():
     
     try:
         # 使用 App Secret 验证并解码 JWT
-        decoded_jwt = jwt.decode(jwt_token, WIX_APP_SECRET, algorithms=["HS256"])
+        decoded_jwt = jwt.decode(jwt_token, WIX_APP_SECRET, algorithms=["RS256"])
         app.logger.debug(f"Decoded JWT payload: {decoded_jwt}")
         
         # 提取 instance_id
